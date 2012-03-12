@@ -1,0 +1,88 @@
+Git
+gitref.org
+git-scm.com/download
+book: google:git  community
+
+git lay tat ca branches
+first job: lay ssh key dien vao github.com
+
+git: nhieu state
+cron ca code va history ve cllient
+git: svn commit(tao history o client), svn push(len server)
+git: co buffer, git add
+
+
+git status=svn st
+git  add -A (or git add fileName) -> put vao de san sang commit
+git commit -m 'test....';
+git log --oneline
+git push vstorm83 master
+git fetch vstorm83=svn update
+
+git commit -a -m (=git add + git commit)
+
+git config -l
+
+git clone = svn co
+git clone git@github.com:vstorm83/exogtn.git
+
+
+git reset --hard = svn revert
+
+git branch -r (branch local and branch remote)
+
+git fetch origin ( update origin branch)
+git rebase origin/3.2.x
+
+git checkout -b 3.2.x origin/3.2.x
+
+git branch
+
+git checkout 3.2.x
+
+git log --graph --oneline
+
+git diff=svn diff(before git add)
+git diff --no-prefix->tao svn patch
+git apply <= patch -p0
+git --cached(after git add)
+
+
+git show (revision id) -> show all information of a revision including committer, patch, date time...
+
+git branch
+*3.2.x
+  3.2.x-webos
+git log --online 3.2.x-webos =3
+id1... change1
+id2... change2
+id3... change3
+git cherry-pick id1 --nocomit(tao patch va apply vao current branch ma ko commit)
+
+git revert id
+
+git remote
+git remote show origin
+
+xoa branch: git branch -d branchName
+
+git remote
+git remote add trongtt git@github.com:trongtt/exogtn.git
+
+root: gedit .git/info/exclude
+
+git stash : diff + make patch
+git stash apply
+
+-------------------------------------------------------------------------------------------------------------------------------
+1.git init : tao local repository de store cac snapshots cua project
+2.git clone: tao local copy cua 1 Git repository online
+3.git add .
+4.git status -> svn st
+   git status -s -> svn st in short version
+5.git diff -> show diff of unstaged changes
+   git diff --cached -> show diff of staged changes
+   git diff HEAD -> show diff of all staged or unstaged changes
+   git diff --stat -> show summary of changes instead of a full diff
+6.git commit: records a snapshot of the staging area
+   git commit -a -> add all and then commit
